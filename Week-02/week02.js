@@ -16,7 +16,7 @@ $('td').each(function(i, elem) {
 //only show td tags with the below style 
     if ($(elem).attr('style')=='border-bottom:1px solid #e3e3e3; width:260px') {
         //replace anything after '-' ',' '(' with nothing // split lines by tabs and turn into an array // remove all other arrays that dont have the address
-            console.log($(elem).html().replace(/[-,(].*/g, "").split("\n\t\t\t\t\t\t").slice(1, 2));
+            console.log($(elem).html().replace(/[-,(].*/g, "").split("\n\t\t\t\t\t\t")[1]);
         }
 
 });
@@ -30,7 +30,7 @@ $('td').each(function(i, elem) {
         // if the 'td' tag has the below style...
         if ($(elem).attr('style')=='border-bottom:1px solid #e3e3e3; width:260px') {
         //then replace anything after '-' ',' '(' with nothing // split lines by tabs and turn into an arrays // remove all other arrays that dont have the address
-        return projectTitles += ($(elem).html().replace(/[-,(].*/g, "").split("\n\t\t\t\t\t\t").slice(1, 2)+ '\n');
+        return projectTitles += ($(elem).html().replace(/[-,(].*/g, "").split("\n\t\t\t\t\t\t")[1].trim() + '\n');
         }
      
 });
