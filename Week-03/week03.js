@@ -17,6 +17,8 @@ const API_URL = 'https://geoservices.tamu.edu/Services/Geocode/WebService/Geocod
 var content = JSON.parse(fs.readFileSync('../Week-02/Addresses/addresses_m01.json'));
 
 
+
+
 // geocode addresses
 let meetingsData = [];
 
@@ -42,6 +44,7 @@ async.eachSeries(content, function(value, callback) {
     		let tamuGeo = JSON.parse(response.body);
     		console.log(tamuGeo['FeatureMatchingResultType'], apiRequest);
     		meetingsData.push(tamuGeo);
+
     	} catch (error) {
     		console.log(error.response.body);
     	}
@@ -50,7 +53,7 @@ async.eachSeries(content, function(value, callback) {
     // sleep for a couple seconds before making the next request
     setTimeout(callback, 2000);
 }, function() {
-    fs.writeFileSync('first.json', JSON.stringify(meetingsData));
+    fs.writeFileSync('second.json', JSON.stringify(meetingsData));
     console.log('*** *** *** *** ***');
     console.log(`Number of meetings in this zone: ${meetingsData.length}`);
 });
