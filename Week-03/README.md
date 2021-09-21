@@ -1,4 +1,5 @@
 First I used the week03.js file to call the addresses_m01.json from Week-02 and parsed it. The dependencies were already set at the top of the document.
+
 ![image](https://user-images.githubusercontent.com/86888346/134096437-399e44ff-7134-4a0a-b2a1-a2971ae73238.png)
 
 Then, I used eachSeries in the async module to iterate over an array and operates on each item in the array in series
