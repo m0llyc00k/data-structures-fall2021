@@ -21,4 +21,5 @@ I created a JS file called 'prettyAddress.js' to work off of, and I transfered t
 
 Lastly, in the prettyAddress.js file, I created a for loop to iterate through all of the addresses and created a new variable where I selected only the data that I needed from this large json document. (Street address, latitude, and longitude). I again added the dependencies on the top of the document.
 After pushing these new objects, I wrote a new file using 'writeFileSync' called AddressLatLong.json, where all of my final data is stored.
+
 ![image](https://user-images.githubusercontent.com/86888346/134096564-96bbfb5e-73ff-44f8-9d7b-a18207ad2164.png)
