@@ -22,6 +22,7 @@ var content = JSON.parse(fs.readFileSync('../Week-02/Addresses/addresses_m01.jso
 // geocode addresses
 let meetingsData = [];
 
+//confirm the amount of addresses passing through
 console.log(content.length)
 
 // eachSeries in the async module iterates over an array and operates on each item in the array in series
@@ -38,6 +39,7 @@ async.eachSeries(content, function(value, callback) {
     // construct a querystring from the `query` object's values and append it to the api URL
     let apiRequest = API_URL + '?' + querystring.stringify(query);
 
+//pass the string of addresses through JSON.parse and push
     (async () => {
     	try {
     		const response = await got(apiRequest);
@@ -52,8 +54,9 @@ async.eachSeries(content, function(value, callback) {
 
     // sleep for a couple seconds before making the next request
     setTimeout(callback, 2000);
+    //create file with json data from tamuGeo inside
 }, function() {
-    fs.writeFileSync('second.json', JSON.stringify(meetingsData));
+    fs.writeFileSync('first.json', JSON.stringify(meetingsData));
     console.log('*** *** *** *** ***');
     console.log(`Number of meetings in this zone: ${meetingsData.length}`);
 });

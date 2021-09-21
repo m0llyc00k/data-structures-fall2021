@@ -852,15 +852,11 @@ const fs = require('fs'),
 
 
 var finalData = []
- 
+ //create a loop to loop through all addresses
 for (var i=0; i<data.length; i++) {
 
 
-// finalData.push(data[i].InputAddress.StreetAddress)
-// finalData.push(data[i].OutputGeocodes[0].OutputGeocode.Latitude)
-// finalData.push(data[i].OutputGeocodes[0].OutputGeocode.Longitude)
-
-
+//create new object to pass only the needed information (address, latitude, longitude)
 var tamuGeoItem = {
             address: data[i].InputAddress.StreetAddress,
             latLong: {
@@ -868,11 +864,12 @@ var tamuGeoItem = {
                 lng: data[i].OutputGeocodes[0].OutputGeocode.Longitude
             }}
 
-
+// push my new objects 
 finalData.push(tamuGeoItem)
 
 }
 
 console.log(tamuGeoItem)
 
+//create a new file with just the necessary geocode information
 fs.writeFileSync('AddressLatLong.json', JSON.stringify(finalData));
