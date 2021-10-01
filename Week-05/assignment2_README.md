@@ -1,4 +1,4 @@
-Assignment 2
+<em>Assignment 2
 
 Part One: Plan
 Using the Hills text as a starting point (but feel free to strike out on your own), draw a data model for your "Process Blog" data to be stored in this database table. Include all the content/data/variables from your "Process Blog" project that you believe to be relevant. Upload an image (png format) of your drawing to your GitHub repository.
@@ -7,10 +7,10 @@ Some decisions that will help with this drawing:
 
 Will you use a Normalized Data Model or a Denormalized Data Model? Why?
 When the data comes back out of the database, how should it be structured? Why?
-How would you describe the hierarchy of the data?
+How would you describe the hierarchy of the data?</em>
 
-My concept for this project came from a bread journal I started keeping a couple of years ago. Each time I bake bread, I create a detailed entry including temperature, time, ingredients, outcome, drawing etc.
-I'd like to use this data/ format to structure these entries below:
+<b>My concept for this project came from a bread journal I started keeping a couple of years ago. Each time I bake bread, I create a detailed entry including temperature, time, ingredients, outcome, drawing etc.
+I'd like to use this data/ format to structure these entries below:</b>
 
 ![image](https://user-images.githubusercontent.com/86888346/135688904-ef03d41a-a6e8-4828-861a-b0f2db2a5c22.png)
 -------------------------------------------------------------------------------------------------------------------------------
