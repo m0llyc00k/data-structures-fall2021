@@ -9,8 +9,9 @@ Will you use a Normalized Data Model or a Denormalized Data Model? Why?
 When the data comes back out of the database, how should it be structured? Why?
 How would you describe the hierarchy of the data?
 
-My concept for this project is based around a bread journal I started keeping a couple of years ago. Each time I bake bread, I create a detailed entry included temperature, time spent, ingredients, outcome, drawing, etc.
+My concept for this project came from a bread journal I started keeping a couple of years ago. Each time I bake bread, I create a detailed entry including temperature, time, ingredients, outcome, drawing etc.
 I'd like to use this data/ format to structure these entries below:
+
 ![image](https://user-images.githubusercontent.com/86888346/135688904-ef03d41a-a6e8-4828-861a-b0f2db2a5c22.png)
 -------------------------------------------------------------------------------------------------------------------------------
 ![image](https://user-images.githubusercontent.com/86888346/135689307-5e77bde6-6428-4363-a674-0d30f52035e1.png)
