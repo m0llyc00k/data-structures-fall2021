@@ -1,3 +1,7 @@
+<b>**This was ammended in folder week-7-a6 in order to complete the following assignemnt. More entries were added and 'PK' was changed to 'breadType' while 'SK' was changed to 'totalTimeHours'</b>
+</br>
+</br>
+
 <b>Part 1</b>
 Create a template for your process blog. I started out pretty vauge with more information to include in my process blog, but after watching the dynamoDB documentation I decided to simplify some areas and expand others.
 ![image](https://user-images.githubusercontent.com/86888346/137550362-6cbe6e7d-170c-449e-9ddb-42d4ac60f1ab.png)
