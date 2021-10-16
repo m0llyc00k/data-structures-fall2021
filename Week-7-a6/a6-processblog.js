@@ -6,16 +6,16 @@ AWS.config.region = "us-east-1";
 var dynamodb = new AWS.DynamoDB();
 
 var params = {
-    TableName : "aaronprocessblog",
-    KeyConditionExpression: "#tp = :topicName and dt between :minDate and :maxDate", // the query expression
-    ExpressionAttributeNames: { // name substitution, used for reserved words in DynamoDB
-        "#tp" : "topic"
+    TableName : "processBlog",
+    KeyConditionExpression: "breadType = :bread and #hours between :minHours and :maxHours", // the query expression
+    ExpressionAttributeNames: { // name substitution, used for reserved words in DynamoDB. I added hours here but didn't need to.
+        "#hours" : "totalTimeHours"
     },
     ExpressionAttributeValues: { // the query values
-        ":topicName": {S: "work"},
-        ":minDate": {N: new Date("August 28, 2020").valueOf().toString()},
-        ":maxDate": {N: new Date("December 11, 2020").valueOf().toString()}
-    }
+        ":bread": {S: "Wheat"},
+        ":minHours": {N: (7).toString()},
+        ":maxHours": {N: (16).toString()}
+    } 
 };
 
 dynamodb.query(params, function(err, data) {
