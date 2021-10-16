@@ -1,4 +1,4 @@
-<b>**This was ammended in folder week-7-a6 in order to complete the following assignemnt. More entries were added and 'PK' was changed to 'breadType' while 'SK' was changed to 'totalTimeHours'</b>
+<b>**This was ammended in folder <em>week-7-a6</em> in order to complete the following assignment. More entries were added and 'PK' was changed to 'breadType' while 'SK' was changed to 'totalTimeHours'</b>
 </br>
 </br>
 
