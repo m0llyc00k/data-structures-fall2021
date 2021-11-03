@@ -43,7 +43,7 @@ fileNumber.forEach(address => {
                             if (directionDetail != null && directionDetail != undefined) {
                                 var directionDetail = $(elem).html().split('<br>')[3].split('NY')[0].split('100')[0].split('(')[1].split(')')[0];
                             }
-                            var meetingType = ($(elem).html().split(' \t\n\t\t\t\t  \t')[1].split('</b>')[0].split('<b>'))
+                            // var meetingType = ($(elem).html().split(' \t\n\t\t\t\t  \t')[1].split('</b>')[0].split('<b>'))
                             var venue = ($(elem).html().split('<b>')[0].split('>')[1].split('<')[0].trim());
                             var groupName = ($(elem).html().split('<br>')[1].split('>')[1].split('<')[0].trim().split('(:I')[0].trim());
                             var wheelchairAccess = $(elem).text().match(/(Wheelchair access)/);
@@ -69,7 +69,6 @@ fileNumber.forEach(address => {
                                         venue,
                                         roomDetail,
                                         directionDetail,
-                                        meetingType,
                                         groupName,
                                         wheelchairAccess,
                                         miscDetails
@@ -85,7 +84,7 @@ fileNumber.forEach(address => {
                         })
 
 
-                    // fs.writeFileSync('data/allZones.json', JSON.stringify(locationDetails));    
+                    fs.writeFileSync('data/allZones.json', JSON.stringify(locationDetails));    
                     
 
 fileNumber.forEach(address => {
@@ -109,7 +108,7 @@ fileNumber.forEach(address => {
                             // var specialInerest = ($(elem).html().split('<br>'))
                             // var meetingType = ($(elem).html().match(/(Meeting Type)/))
                             
-                            console.log(meetingType)
+                            // console.log(meetingType)
 
 
                                     meeting.push({
