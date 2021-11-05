@@ -3,7 +3,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 
 var locationDetails = [];
-var meeting = [];
+var finalData = []
 
 
 // load the thesis text file into a variable, `content`
@@ -30,6 +30,7 @@ fileNumber.forEach(address => {
 
             // load `content` into a cheerio object
             var $ = cheerio.load(content);
+                        
 
             //call all 'tr' tags
             $('tr').each(function(i, elem) {
@@ -37,7 +38,7 @@ fileNumber.forEach(address => {
                         if ($(elem).attr('style') == 'margin-bottom:10px') {
                             //use split and find data details for each location component
                             var address = $(elem).html().split('<br>')[2].trim().split(',')[0];
-                            var zipCode = $(elem).text().match(/\d{5}/);
+                            // var zipCode = $(elem).text().match(/\d{5}/);
                             var roomDetail = $(elem).html().split('<br>')[2].split(',')[1].trim();
                             var directionDetail = $(elem).html().split('<br>')[3].split('NY')[0].split('100')[0].split('(')[1];
                             if (directionDetail != null && directionDetail != undefined) {
@@ -53,6 +54,8 @@ fileNumber.forEach(address => {
                                 var wheelchairAccess = 'No';
                             };
                             var miscDetails = $(elem).find('div').text().trim();
+                        
+                
 
                             //push this into a new object within the above object//
 
@@ -61,6 +64,7 @@ fileNumber.forEach(address => {
                             // var startTime = ($(elem).html().split('<br>'))
                             // var endTime = 
                             // var specialInerest =
+
 
 
 
@@ -75,60 +79,76 @@ fileNumber.forEach(address => {
                                     })
 
 
+            
+            
                                 }
+// td:nth-of-type(2)
+                            // var locationDetails = locationData;
+                            var meetings = []
+            
+                            // $(elem).find('td').text().split('\n').map( d => d.trim()).filter(Boolean).forEach(function(e,idx){
+                                    $(elem).find('td').eq(1).each(function(i, elem) {
+                                        if ($(elem).attr('style') == 'border-bottom:1px solid #e3e3e3;width:350px;') {
+                                
+                                  var meetingInfo = $(elem).text().trim();  
+                                  var meetingInfoArray = meetingInfo.split('\n').map( d => d.trim()).filter(Boolean)
+                                  
+                                              for (var i = 0; i<meetingInfoArray.length; i++){
+                                                  var day = ($(elem).html().split(' \t\n\t\t\t\t  \t')[1].split('</b>')[0].split('<b>')[1].split(' ')[0]);
+                                                  var startTime = ($(elem).html().split(' ').filter(Boolean)[6])
+                                                  var startTimeAMPM = ($(elem).html().split(' ').filter(Boolean)[7])
+                                                  var trueStartTime = startTime + ' ' + startTimeAMPM;
+                                                  var endTime = ($(elem).html().split(' ').filter(Boolean)[9])
+                                                  var endTimeAMPM = ($(elem).html().split(' ').filter(Boolean)[10])
+                                                  var trueEndTime = endTime + ' ' + endTimeAMPM
+                                                  var meetingType = ($(elem).html().split(' ').filter(Boolean)[13])
+                                                  
+                                              }
+                                              for (var i = 0; i<meetingInfoArray.length; i++) {
+                                                //split on special interest
+                                                var interest = meetingInfoArray[i].split('Special Interest')[1];
+                                                var specialInerest;
+                                                if (interest) {
+                                                    specialInerest = interest.trim();
+                                                } else {
+                                                    specialInerest = '';
+                                                }}
 
 
+                              meetings.push({
+                                      day,
+                                      trueStartTime,
+                                      trueEndTime,
+                                      meetingType,
+                                      specialInerest
+                                      })
+
+
+
+
+                            // console.log(finalData)
+                                    
+                                    
+                                 
+                         }
+                            })
+
+
+                          
+            
                             });
 
 
                         })
 
+                            
 
-                    fs.writeFileSync('data/allZones.json', JSON.stringify(locationDetails));    
+
+
+                    fs.writeFileSync('data/allZones.json', JSON.stringify(finalData));    
                     
 
-fileNumber.forEach(address => {
-            // load the AA meeting text file into a variable, `content`, do this for each file
-            var content = fs.readFileSync(fileFolder + address);
 
 
-            // load `content` into a cheerio object
-            var $ = cheerio.load(content);
 
-            //call all 'tr' tags
-            $('td').each(function(i, elem) {
-                        //only show td tags with the below style 
-                        if ($(elem).attr('style') == 'border-bottom:1px solid #e3e3e3;width:350px;') {
-                            //use split and find data details for each location component
-
-
-                            var day = ($(elem).html().split(' \t\n\t\t\t\t  \t')[1].split('</b>')[0].split('<b>')[1].split(' ')[0])
-                            // var startTime = ($(elem).html().split('<br>'))
-                            // var endTime = 
-                            // var specialInerest = ($(elem).html().split('<br>'))
-                            // var meetingType = ($(elem).html().match(/(Meeting Type)/))
-                            
-                            // console.log(meetingType)
-
-
-                                    meeting.push({
-                                        day,
-                                        // startTime,
-                                        // endTime,
-                                        // specialInerest,
-                                        // meetingType
-                                
-                                    })
-
-
-                                }
-
-
-                            });
-
-
-                        })
-                        
-                        
-                        
-                        
+// $(elem).find('td:nth-of-type(2)').text().split('\n').map( d => d.trim()).filter(Boolean).forEach(function(e,idx)
