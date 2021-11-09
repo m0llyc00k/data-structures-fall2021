@@ -1,5 +1,5 @@
 <h2> Designs for Final Projects </h2>
-<h3>Molly Cook</h3>
+<h4>Molly Cook</h4>
 <h4>Data Structures, Fall 2021<h4>
 
 ![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
