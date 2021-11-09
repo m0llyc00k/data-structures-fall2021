@@ -2,10 +2,9 @@
 
 <h4><b>Molly Cook</b> ///// Data Structures, Fall 2021<h4>
 
-
+![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
 <h3>Redesign of AA Website</h3>
 I am looking to utilized a map to show the meetings themselves and where they are located. On the column to the right, there are various important filters to filter what you need from a meeting. On the bottom, a row will be there to show you the meeting you've selected once you click it on the map. All of the remaining details along with the address and directions will be there to view.
-![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
 
 
 ![image](https://user-images.githubusercontent.com/86888346/141020869-527b3d84-324e-4828-9df9-d74467df621e.png)
