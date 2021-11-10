@@ -1,12 +1,13 @@
 <h2> Designs for Final Projects </h2>
-<h3> What will the visualization look like? Will it be interactive? If so, how? <br>
+<h3><b>Molly Cook</b> ///// Data Structures, Fall 2021</h3>
+<h4>
+What will the visualization look like? Will it be interactive? If so, how? <br>
 How will the data need to be mapped to the visual elements? <br>
 For that mapping, what needs to be done to the data? Be specific and clear. Will it require filtering, aggregation, restructuring, and/or something else? How will this be done? <br>
 What is the default view (if any)? <br>
 What assumptions are you making about the user? <br>
-  </h3>
+</h4>
 
-<h4><b>Molly Cook</b> ///// Data Structures, Fall 2021<h4>
 
 ![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
 <h3>Redesign of AA Website</h3>
