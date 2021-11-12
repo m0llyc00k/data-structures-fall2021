@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 
 var locationDetails = [];
 var finalData = []
+var finalAddress = []
 
 
 
@@ -24,9 +25,9 @@ var fileNumber = [
 ];
 
 
-fileNumber.forEach(address => {
+fileNumber.forEach(file => {
     // load the AA meeting text file into a variable, `content`, do this for each file
-    var content = fs.readFileSync(fileFolder + address);
+    var content = fs.readFileSync(fileFolder + file);
 
 
     // load `content` into a cheerio object
@@ -40,16 +41,21 @@ fileNumber.forEach(address => {
         if ($(elem).attr('style') == 'margin-bottom:10px') {
             //use split and find data details for each location component
 
-            var address = $(elem).html().split('<br>')[2].trim().split(',')[0];
-            // var zipCode = $(elem).text().match(/\d{5}/);
-            // var zone = file.match(/\d+/);
-            var roomDetail = $(elem).html().split('<br>')[2].split(',')[1].trim();
+            var address = $(elem).html().split('<br>')[2].trim().split(',')[0].split('&amp;')[0].split('@')[0].split('- ')[0].split('Basement')[0].split('Rm')[0].split('(')[0].split('. Meeting')[0].trim();
+            var zipCode = $(elem).text().match(/\d{5}/);
+            var zone = file.match(/\d+/)[0];
+            var roomDetail = $(elem).html().split('<br>')[2].split(',')[1].split('NY')[0].split('100')[0].trim(); 
+            roomDetail = roomDetail.replace('&amp;', '&');
             var directionDetail = $(elem).html().split('<br>')[3].split('NY')[0].split('100')[0].split('(')[1];
             if (directionDetail != null && directionDetail != undefined) {
                 var directionDetail = $(elem).html().split('<br>')[3].split('NY')[0].split('100')[0].split('(')[1].split(')')[0];
             } else {
                 directionDetail = ''
             }
+            
+             if (zipCode != null && zipCode != undefined){
+                zipCode = zipCode[0]
+            };
             
             //clean all direction detail data
             directionDetail = directionDetail.replace('@', 'At');
@@ -63,7 +69,8 @@ fileNumber.forEach(address => {
             
             
             // var meetingType = ($(elem).html().split(' \t\n\t\t\t\t  \t')[1].split('</b>')[0].split('<b>'))
-            var venue = ($(elem).html().split('<b>')[0].split('>')[2].split('<')[0].trim());
+            // var venue = ($(elem).html().split('<b>')[0].split('>')[2].split('<')[0].trim());
+            var venue = ($(elem).html().split('<h4 style="margin:0;padding:0;">')[1].split('</h4>')[0]);
             var groupName = ($(elem).html().split('<br>')[1].split('>')[1].split('<')[0].trim().split('(:I')[0].trim());
             var wheelchairAccess = $(elem).text().match(/(Wheelchair access)/);
             if (wheelchairAccess != null && wheelchairAccess != undefined) {
@@ -75,7 +82,7 @@ fileNumber.forEach(address => {
             var miscDetails = $(elem).find('div').text().trim();
             var meetingDetails = [];
 
-            console.log(address)
+
 
             //push this into a new object within the above object//
 
@@ -90,7 +97,8 @@ fileNumber.forEach(address => {
 
             var thisMeeting = {
                 address,
-                // zone,
+                zipCode,
+                zone,
                 venue,
                 roomDetail,
                 directionDetail,
@@ -173,9 +181,10 @@ fileNumber.forEach(address => {
         }
 
         // thisMeeting["meetingDetails"] = meetings;
-        finalData.push(thisMeeting)
+        // finalData.push(thisMeeting)
+        finalAddress.push(address)
 
-        // console.log(thisMeeting)
+        // console.log(groupName)
 
     });
 
@@ -186,5 +195,7 @@ fileNumber.forEach(address => {
 
 
 
-// fs.writeFileSync('data/allZonesTest.json', JSON.stringify(finalData));
+// fs.writeFileSync('data/allZonesFinal.json', JSON.stringify(finalData));
+fs.writeFileSync('data/allZonesAddress.json', JSON.stringify(finalAddress));
+
 
