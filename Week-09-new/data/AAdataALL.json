@@ -328,7 +328,7 @@
       },
       "thisMeeting":{
          "address":"22 Barclay Street New York NY",
-         "zipCode":null,
+         "zipCode":"",
          "zone":"01",
          "venue":"St. Peter's Church",
          "roomDetail":"",
@@ -2251,7 +2251,7 @@
       },
       "thisMeeting":{
          "address":"232 West 11th Street New York NY",
-         "zipCode":null,
+         "zipCode":"",
          "zone":"02",
          "venue":"Seventh Adventist Church",
          "roomDetail":"Basement",
@@ -11642,7 +11642,7 @@
       },
       "thisMeeting":{
          "address":"152 west 71st street New York NY",
-         "zipCode":null,
+         "zipCode":"",
          "zone":"06",
          "venue":"",
          "roomDetail":"",

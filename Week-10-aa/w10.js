@@ -15,9 +15,9 @@ const client = new Client(db_credentials);
 client.connect();
 
 // Sample SQL statement to create a table: 
-var thisQuery = "CREATE TABLE aa_meetings_final (address varchar(100), lat double precision, long double precision, zipCode double precision, zone double precision, venue varchar(200), roomDetail varchar(200), directionDetail varchar(300), groupName varchar(200), wheelchairAccess varchar(100), miscDetails varchar(300), day varchar(100), trueStartTime varchar(100), trueEndTime varchar(100), meetingType varchar(100), specialInerest varchar(200))";
+var thisQuery = "CREATE TABLE aa_meeting_database (address varchar(100), lat double precision, long double precision, zipCode varchar(100), zone varchar(50), venue varchar(200), roomDetail varchar(200), directionDetail varchar(300), groupName varchar(200), wheelchairAccess varchar(100), miscDetails varchar(300), day varchar(100), trueStartTime varchar(100), trueEndTime varchar(100), meetingType varchar(100), specialInerest varchar(200))";
 // Sample SQL statement to delete a table: 
-// var thisQuery = "DROP TABLE aalocations2;"; 
+// var thisQuery = "DROP TABLE aa_meeting_database;"; 
 
 client.query(thisQuery, (err, res) => {
     console.log(err, res);
