@@ -7,12 +7,12 @@ The goal of this project was to scrape all AA data from the below existing site 
 I began this journey by scraping the addresses from the existing AA website link through the following code: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146854533-c488ff66-5e6e-4409-ada1-9631f872380b.png)
 
-After getting the addresses, I pulled the geocodes using the following code in order to utilize the longitude and latitude in the final result.: <br>
+After getting the addresses, I pulled the geocodes using the following code (tamugeo): <br>
 ![image](https://user-images.githubusercontent.com/86888346/146857019-d3af798c-4a1a-4687-b7a5-2ae7b1c7dbd0.png)
 The below is the data that was pulled: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146855405-5ffe59d6-bd6c-44b3-9749-45e4126341ef.png)
 
-Although I had the latitude and longitude, I had to scrape the remaining data from the sites, and so I scraped for additional meeting, location, and detailed data. Below is a sample of that code:
+Although I had the latitude and longitude, I had to scrape the remaining data from the sites, and so I scraped for additional meeting, location, and other detailed data. Below is a sample of that code:
 ![image](https://user-images.githubusercontent.com/86888346/146857134-1d9c9ad8-5845-4144-b149-9c9e56824a94.png)
 
 Here is the result of that all the additional AA data that was scraped:
