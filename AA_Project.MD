@@ -37,6 +37,7 @@ After having all the data, I attempted the starter code that utilized a map from
 ![image](https://user-images.githubusercontent.com/86888346/146858414-add3b76a-d2de-4d0a-af42-5e49cabf4fb7.png)
 Because I hadn't combined my longitude and latitude data properly with the rest of the AA meeting data I had scraped, all of the meetings were combined into the same marker on the map. Although the rest of the data was there, they were not in the proper location. I attempted to get the longitude and latitude data once again, but unfortunately 'GOT' was not working for me, and I wasn't able to accomplish this. <br>
 My initial plan was to create an interface that allowed for filtering, sorting, and locating meetings on a map per the below design. With more time and troubleshooting, I think I could have achieved this. <br>
+![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
 
 
 
