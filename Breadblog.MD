@@ -24,6 +24,10 @@ We can see the evidenced data in the database here: <br>
 Using the starter code, I modified the template to reflect the data in my bread blog. Below is a sample of that code:
 ![image](https://user-images.githubusercontent.com/86888346/146866944-94ed59d3-2a45-41c4-b690-2e04948ba3ae.png)
 
+Here is a snapshot of the javascript that writes the database to the template: <br>
+![image](https://user-images.githubusercontent.com/86888346/146867660-b7114bf9-bef3-4397-97a9-666b9db1007e.png)
+
+
 Here is the landing page for my bread journal: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146866237-439feedb-5e99-4b0b-b242-13f7d6421263.png)
 Here is the bread when the type query is changed to 'wheat' in the address bar: <br>
