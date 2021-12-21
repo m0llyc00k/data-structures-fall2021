@@ -24,8 +24,6 @@ In order to write this code to my database, I had to reformat the structure so t
 As a result, I made the following json that included more location data, accessibiity details, meeting type, time, etc.: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146855805-35210459-8ec6-4acd-84ff-0a4d67893e33.png)
 
-The final json looked like this, with each meeting represented by its time, location, and type:
-![image](https://user-images.githubusercontent.com/86888346/146857134-1d9c9ad8-5845-4144-b149-9c9e56824a94.png)
 
 After finalizing the json, it was time to write this to the RDS database. Below is a sample of the code:<br>
 Creating the database: <br>
