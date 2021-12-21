@@ -7,7 +7,7 @@ To begin, I created a basic template for my bread blog. I started out pretty vau
 Using the starter code, I created a template to insert the information of my bread blog. Once the template was created with string, boolean, or number values, I pushed the information into the object created. (blogEntries) In this instance, I was just console logging to confirm the information is there and correct.
 ![image](https://user-images.githubusercontent.com/86888346/137550578-5e9ae7f0-3724-44f2-b6da-c471095c7e29.png)
 
-In this code I queried for wheat bread that took between 7 and 16 hours.
+In this code I queried for wheat bread that took between 7 and 16 hours. The primary keys were Wheat or White bread, and the secondary keys were total time hours spent in making the bread.
 ![image](https://user-images.githubusercontent.com/86888346/137593213-561e8166-84aa-42af-ac0d-c5248474ce98.png)
 
 Here is my query, shown in the console: 
