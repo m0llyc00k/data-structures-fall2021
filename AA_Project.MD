@@ -33,9 +33,12 @@ Calling the data to make sure its all there: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146857972-a8473bf4-002b-4d80-8ed3-011b7fe9b197.png)
 Here is what is logged in the terminal to show the data within the database: <br>
 ![image](https://user-images.githubusercontent.com/86888346/146858055-0c244550-874f-4274-a7a9-d0cf1952acc2.png)
-After having all the data, I attempted the starter code that utilized a map from the leaflet.js library, but below was the result: <br>
-![image](https://user-images.githubusercontent.com/86888346/146858414-add3b76a-d2de-4d0a-af42-5e49cabf4fb7.png)
-Because I hadn't combined my longitude and latitude data properly with the rest of the AA meeting data I had scraped, all of the meetings were combined into the same marker on the map. Although the rest of the data was there, they were not in the proper location. I attempted to get the longitude and latitude data once again, but unfortunately 'GOT' was not working for me, and I wasn't able to accomplish this. <br>
+After having all the data, I used the starter code to map the meetings on a map using leaflet.js: <br>
+![image](https://user-images.githubusercontent.com/86888346/146864485-5a075027-d1d7-4113-b7e2-4e35ae0c0b0d.png)
+On click, you are able to create a pop up with the data that was pulled for each meeting in that location: <br>
+![image](https://user-images.githubusercontent.com/86888346/146864729-4da66639-ac5d-4d15-9186-9de9092f5cb5.png)
+
+
 My initial plan was to create an interface that allowed for filtering, sorting, and locating meetings on a map per the below design. With more time and troubleshooting, I think I could have achieved this. <br>
 ![image](https://user-images.githubusercontent.com/86888346/141022125-61ca4475-0562-4b81-81af-98bdf9be4092.png)
 
